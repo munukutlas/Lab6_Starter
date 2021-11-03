@@ -75,11 +75,12 @@ function createRecipeCards() {
   // Part 1 Expose - TODO
 
 
+  let mainBlock = document.querySelector('main');
+
   for (let i = 0; i < Object.keys(recipeData).length; i++) {
     let newRecipe = document.createElement('recipe-card');
     newRecipe.data = recipeData[i];
-    let mainBlock = document.querySelector('#main');
-    mainBlock.append(newRecipe);
+    mainBlock.appendChild(newRecipe);
   }
 
 }

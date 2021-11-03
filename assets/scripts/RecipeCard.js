@@ -106,6 +106,10 @@ class RecipeCard extends HTMLElement {
 
     console.log('IN DATA');
 
+    let imgURL = document.createElement('img');
+    imgURL.src = searchForKey(data, 'thumbnailUrl');
+    card.appendChild(imgURL);
+/** 
     let imgURL = document.querySelector('img[alt="Recipe Title"]');
     imgURL.setAttribute('src', data.searchForKey(data, 'thumbnailUrl'));
 
@@ -120,11 +124,12 @@ class RecipeCard extends HTMLElement {
 
     let org = document.querySelector('.organization');
     org.setAttribute('name', data.getOrganization());
+    */
 
 
 
-    shadow.appendChild(styleElem);
-    shadow.appendChild(card);
+    this.shadowRoot.appendChild(styleElem);
+    this.shadowRoot.appendChild(card);
 
   }
 }

@@ -109,6 +109,15 @@ class RecipeCard extends HTMLElement {
     let imgURL = document.createElement('img');
     imgURL.src = searchForKey(data, 'thumbnailUrl');
     card.appendChild(imgURL);
+
+    let titleElem = document.createElement('p');
+    //titleElem.textContent = searchForKey(data, 'name');
+    let titleUrl = document.createElement('a');
+    titleUrl.href = getUrl(data);
+    titleUrl.textContent = searchForKey(data, 'name');
+    titleElem.appendChild(titleUrl);
+    card.appendChild(titleElem);
+
 /** 
     let imgURL = document.querySelector('img[alt="Recipe Title"]');
     imgURL.setAttribute('src', data.searchForKey(data, 'thumbnailUrl'));

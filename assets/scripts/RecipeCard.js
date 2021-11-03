@@ -3,6 +3,9 @@ class RecipeCard extends HTMLElement {
     // Part 1 Expose - TODO
 
     // You'll want to attach the shadow DOM here
+
+    super();
+    let shadow = this.attachShadow({mode: 'open'});
   }
 
   set data(data) {
@@ -100,6 +103,29 @@ class RecipeCard extends HTMLElement {
     // created in the constructor()
 
     // Part 1 Expose - TODO
+
+    console.log('IN DATA');
+
+    let imgURL = document.querySelector('img[alt="Recipe Title"]');
+    imgURL.setAttribute('src', data.searchForKey(data, 'thumbnailUrl'));
+
+    card.append(imgURL);
+
+    let titleElem = document.querySelector('.title');
+    titleElem.setAttribute('href', data.getUrl());
+
+    titleElem.setAttribute('name', data.searchForKey(data, 'name'));
+
+    card.appendChild()
+
+    let org = document.querySelector('.organization');
+    org.setAttribute('name', data.getOrganization());
+
+
+
+    shadow.appendChild(styleElem);
+    shadow.appendChild(card);
+
   }
 }
 
